@@ -18,6 +18,13 @@ void AllCities() {
 
     }
 }
+void GetCity(string userInput) {
+    if (nzPop.find(userInput) != nzPop.end()) {
+
+        cout << "City: " << "[" << userInput << "]" << "\tPopulation " << "(" << nzPop[userInput] << ")\n" << endl;
+
+    }
+}
 
 
 int main()
@@ -49,22 +56,23 @@ int main()
 
         cin >> userInput;
         
-        
-
-        if (nzPop.find(userInput) != nzPop.end()) {
-
-            cout << "City: " << "[" << userInput << "]" << "\tPopulation " << "(" << nzPop[userInput] << ")" << endl;
-
-        }
-
+        GetCity(userInput);
 
         if (userInput == "*") {
 
             AllCities();
 
         }
-        cout << would you like to play again
-        system("cls");
+       
+        cout << "would you like to enter another city? y/n\n";
+        cin >> userInput;
+
+        if (userInput == "y") {
+            system("cls");
+        }
+        else if (userInput == "n") {
+            break;
+        }
     }
     
     
